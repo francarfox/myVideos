@@ -11,6 +11,7 @@ import UIKit
 class CarouselViewCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     let collectionCellId = "collectionCellIdentifier"
+    var delegate: CarouselViewCellDelegate?
     @IBOutlet var collectionView: UICollectionView!
     
     override func awakeFromNib() {
@@ -49,5 +50,15 @@ class CarouselViewCell: UITableViewCell, UICollectionViewDataSource, UICollectio
         
         return CGSize(width: width, height: frame.height)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let item = carousel?.items?[indexPath.row] {
+            delegate?.carouselViewCell(self, didSelectItem: item)
+        }
+    }
 
+}
+
+protocol CarouselViewCellDelegate {
+    func carouselViewCell(_ cell: CarouselViewCell, didSelectItem item: CarouselItem)
 }

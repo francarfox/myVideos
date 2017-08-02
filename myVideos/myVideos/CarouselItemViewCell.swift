@@ -51,7 +51,7 @@ class CarouselItemViewCell: UICollectionViewCell {
         titleView.widthAnchor.constraint(lessThanOrEqualToConstant: frame.width - 10).isActive = true
     }
     
-    lazy var backgroundImageView: UIImageView = {
+    let backgroundImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.backgroundColor = .clear
         imageView.contentMode = .scaleAspectFit
@@ -59,7 +59,7 @@ class CarouselItemViewCell: UICollectionViewCell {
         return imageView
     }()
 
-    lazy var titleView: UILabel = {
+    let titleView: UILabel = {
         let title = UILabel()
         title.font = UIFont.boldSystemFont(ofSize: 9)
         title.textColor = .black

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		08EB922F34C38564DCF5660D /* Pods_myVideosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA0ED8671E211C5A83529BD8 /* Pods_myVideosTests.framework */; };
+		1B18D0801F302FA3009F5AD2 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B18D07F1F302FA3009F5AD2 /* VideoViewController.swift */; };
+		1B18D0821F30D9D4009F5AD2 /* VideoLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B18D0811F30D9D4009F5AD2 /* VideoLauncher.swift */; };
 		1B9F446A1F2C26870037AA33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9F44691F2C26870037AA33 /* AppDelegate.swift */; };
 		1B9F446F1F2C26870037AA33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B9F446D1F2C26870037AA33 /* Main.storyboard */; };
 		1B9F44711F2C26870037AA33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B9F44701F2C26870037AA33 /* Assets.xcassets */; };
@@ -43,6 +45,8 @@
 
 /* Begin PBXFileReference section */
 		000B74C08F561031D15F57F8 /* Pods-myVideos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myVideos.release.xcconfig"; path = "Pods/Target Support Files/Pods-myVideos/Pods-myVideos.release.xcconfig"; sourceTree = "<group>"; };
+		1B18D07F1F302FA3009F5AD2 /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
+		1B18D0811F30D9D4009F5AD2 /* VideoLauncher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoLauncher.swift; sourceTree = "<group>"; };
 		1B9F44661F2C26870037AA33 /* myVideos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myVideos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B9F44691F2C26870037AA33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1B9F446E1F2C26870037AA33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -126,7 +130,7 @@
 			children = (
 				1B9F44691F2C26870037AA33 /* AppDelegate.swift */,
 				1B9F44A41F2C2BE60037AA33 /* Views */,
-				1B9F44A51F2C2BEB0037AA33 /* Controllers */,
+				1B9F44A51F2C2BEB0037AA33 /* ViewModels */,
 				1B9F44A31F2C2BDA0037AA33 /* Models */,
 				1B9F44701F2C26870037AA33 /* Assets.xcassets */,
 				1B9F44971F2C2B8F0037AA33 /* jsonFile.json */,
@@ -167,18 +171,20 @@
 			children = (
 				1B9F446D1F2C26870037AA33 /* Main.storyboard */,
 				1B9F44721F2C26870037AA33 /* LaunchScreen.storyboard */,
+				1B9F44A11F2C2BCB0037AA33 /* HomeViewController.swift */,
+				1B18D0811F30D9D4009F5AD2 /* VideoLauncher.swift */,
+				1B9F449F1F2C2BC50037AA33 /* CarouselViewCell.swift */,
+				1B9F449D1F2C2BBF0037AA33 /* CarouselItemViewCell.swift */,
+				1B18D07F1F302FA3009F5AD2 /* VideoViewController.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
 		};
-		1B9F44A51F2C2BEB0037AA33 /* Controllers */ = {
+		1B9F44A51F2C2BEB0037AA33 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				1B9F44A11F2C2BCB0037AA33 /* HomeViewController.swift */,
-				1B9F449F1F2C2BC50037AA33 /* CarouselViewCell.swift */,
-				1B9F449D1F2C2BBF0037AA33 /* CarouselItemViewCell.swift */,
 			);
-			name = Controllers;
+			name = ViewModels;
 			sourceTree = "<group>";
 		};
 		3EE3B7631B450E487A748157 /* Pods */ = {
@@ -471,11 +477,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B9F449A1F2C2BA80037AA33 /* Carousel.swift in Sources */,
+				1B18D0801F302FA3009F5AD2 /* VideoViewController.swift in Sources */,
 				1B9F44A01F2C2BC50037AA33 /* CarouselViewCell.swift in Sources */,
 				1B9F449E1F2C2BBF0037AA33 /* CarouselItemViewCell.swift in Sources */,
 				1B9F446A1F2C26870037AA33 /* AppDelegate.swift in Sources */,
 				1B9F44A21F2C2BCB0037AA33 /* HomeViewController.swift in Sources */,
 				1B9F449C1F2C2BAE0037AA33 /* DataService.swift in Sources */,
+				1B18D0821F30D9D4009F5AD2 /* VideoLauncher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -625,6 +633,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 43E67C4E292F426D2491FF2A /* Pods-myVideos.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = myVideos/Info.plist;
@@ -639,6 +648,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 000B74C08F561031D15F57F8 /* Pods-myVideos.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = myVideos/Info.plist;

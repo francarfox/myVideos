@@ -12,6 +12,7 @@ class HomeViewController: UITableViewController {
 
     let tableCellId = "tableCellIdentifier"
     var carousels = [Carousel]()
+    var statusBarHidden: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +38,7 @@ class HomeViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: tableCellId, for: indexPath) as! CarouselViewCell
 
+        cell.delegate = self
         cell.carousel = carousels[indexPath.section]
 
         return cell
@@ -54,14 +56,20 @@ class HomeViewController: UITableViewController {
         }
     }
 
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+extension HomeViewController: CarouselViewCellDelegate {
+    func carouselViewCell(_ cell: CarouselViewCell, didSelectItem item: CarouselItem) {
+        let videoLauncher = VideoLauncher()
+//        controller.item = item
+        
+        videoLauncher.showVideoPlayer {
+            self.statusBarHidden = !self.statusBarHidden
+            self.setNeedsStatusBarAppearanceUpdate()
+        }
     }
-    */
-
+    
+    override var prefersStatusBarHidden: Bool {
+        return statusBarHidden
+    }
 }
